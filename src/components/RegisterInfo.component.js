@@ -56,6 +56,8 @@ export function RegisterInfo() {
           <p>요청사항</p>
           <textarea placeholder="이곳에 추가 요청사항을 작성해주세요. " />
         </Request>
+        <ConfirmButton />
+        <button type="submit">예약 확정</button>
       </Container>
     </>
   );
@@ -101,3 +103,5 @@ const Request = styled.div`
     margin-left: 20px;
   }
 `;
+
+const ConfirmButton = styled.div``;

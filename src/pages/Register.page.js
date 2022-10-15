@@ -1,7 +1,13 @@
 import styled from 'styled-components';
+import { RegisterInfo } from '../components/RegisterInfo.component';
 
 export function Register() {
-  return <Container>Register.page</Container>;
+  return (
+    <Container>
+      <h1>Register.page</h1>
+      <RegisterInfo />
+    </Container>
+  );
 }
 
 const Container = styled.div`

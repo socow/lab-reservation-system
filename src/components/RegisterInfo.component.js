@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FiCalendar } from 'react-icons/fi';
 
 export function RegisterInfo() {
   const checkOnlyOne = checkThis => {
@@ -12,11 +13,14 @@ export function RegisterInfo() {
 
   return (
     <>
-      <p>Personal Information</p>
+      <p>예약자 정보</p>
       <Container>
         <Name>
           <p>예약자명</p>
-          <input type="box" />
+          <div className="required">
+            <input type="text" />
+            <span>*필수</span>
+          </div>
         </Name>
         <Name />
         <Type>
@@ -54,27 +58,46 @@ export function RegisterInfo() {
         </Type>
         <Request>
           <p>요청사항</p>
-          <textarea placeholder="이곳에 추가 요청사항을 작성해주세요. " />
+          <textarea placeholder="이곳에 추가 요청사항을 적어주세요. " />
         </Request>
-        <ConfirmButton />
-        <button type="submit">예약 확정</button>
+        <ConfirmButton type="submit">
+          <FiCalendar />
+          <p>예약 확정</p>
+        </ConfirmButton>
       </Container>
     </>
   );
 }
 
-const Container = styled.button`
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border: 1px dashed white;
   background-color: green;
-  width: 100%;
   p {
   }
 `;
 
-const Name = styled.div`
+const Name = styled.section`
   display: flex;
+  align-items: center;
   margin-top: 10px;
-  /* text-align: center; */
+  div {
+    display: flex;
+    span {
+      position: absolute;
+      right: 8px;
+      font-size: 15px;
+      color: red;
+    }
+  }
+  .required {
+    position: relative;
+  }
   p {
     font-size: 15px;
   }
@@ -85,7 +108,7 @@ const Name = styled.div`
 
 const Type = styled.div`
   display: flex;
-  margin-top: 10px;
+  align-items: center;
   p {
     font-size: 15px;
   }
@@ -97,11 +120,27 @@ const Type = styled.div`
 
 const Request = styled.div`
   display: flex;
+  align-items: center;
   margin-top: 10px;
   font-size: 15px;
   textarea {
-    margin-left: 20px;
+    margin-left: 15px;
   }
 `;
 
-const ConfirmButton = styled.div``;
+const ConfirmButton = styled.button`
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 60px;
+  &:hover {
+    cursor: pointer;
+    background-color: skyblue;
+  }
+  p {
+    margin-left: 5px;
+  }
+`;

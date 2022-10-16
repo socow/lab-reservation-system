@@ -22,7 +22,13 @@ export function RegisterInfo() {
             <span>*필수</span>
           </div>
         </Name>
-        <Name />
+        <Phone>
+          <p>연락처</p>
+          <div className="required">
+            <input type="number" />
+            <span>*필수</span>
+          </div>
+        </Phone>
         <Type>
           <p>예약종류</p>
           <div className="input">
@@ -82,7 +88,7 @@ const Container = styled.section`
   }
 `;
 
-const Name = styled.section`
+const Name = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -106,9 +112,34 @@ const Name = styled.section`
   }
 `;
 
+const Phone = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  div {
+    display: flex;
+    span {
+      position: absolute;
+      right: 8px;
+      font-size: 15px;
+      color: red;
+    }
+  }
+  .required {
+    position: relative;
+  }
+  p {
+    font-size: 15px;
+  }
+  input {
+    margin-left: 32px;
+  }
+`;
+
 const Type = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 10px;
   p {
     font-size: 15px;
   }

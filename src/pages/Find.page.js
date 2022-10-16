@@ -52,16 +52,15 @@ export function Find() {
         {filterReservationData &&
           filterReservationData.map(
             ({ id, clientName, type, date, startTime, reservationStatus }) => (
-              <UserInformation key={id}>
-                <UserNumber>예약번호: {id}</UserNumber>
-                <UserName>예약자명: {clientName}</UserName>
-                <UserType>예약종류: {type}</UserType>
-                <UserDate>예약날짜 : {date}</UserDate>
-                <UserStartTime>예약시간 : {startTime}</UserStartTime>
-                <UserReservationStatus>
-                  예약상태: {reservationStatus}
-                </UserReservationStatus>
-              </UserInformation>
+              <UserInformationWrappar key={id}>
+                <UserInformation>예약번호: {id}</UserInformation>
+                <UserInformation>예약자명: {clientName}</UserInformation>
+                <UserInformation>예약종류: {type}</UserInformation>
+                <UserInformation>예약날짜 : {date}</UserInformation>
+                <UserInformation>예약시간 : {startTime}</UserInformation>
+                <UserInformation>예약상태: {reservationStatus}</UserInformation>
+                <UserInformation>요청사항: </UserInformation>
+              </UserInformationWrappar>
             )
           )}
       </SearchBox>
@@ -105,31 +104,11 @@ const NoReservation = styled.div`
   font-size: 20px;
 `;
 
-const UserInformation = styled.div`
+const UserInformationWrappar = styled.div`
   font-size: 17px;
   margin-top: 10px;
 `;
-const UserNumber = styled.div`
-  padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
-`;
-const UserName = styled.div`
-  padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
-`;
-const UserType = styled.div`
-  padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
-`;
-const UserDate = styled.div`
-  padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
-`;
-const UserStartTime = styled.div`
-  padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
-`;
-const UserReservationStatus = styled.div`
+const UserInformation = styled.div`
   padding: 7px;
   border-bottom: 1.5px solid ${colors.pink};
 `;

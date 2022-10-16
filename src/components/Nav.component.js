@@ -1,10 +1,27 @@
 import styled from 'styled-components';
+import { colors } from '../styles/Theme';
 
 export function Nav() {
-  return <Container>Nav.component</Container>;
+  return (
+    <Container>
+      <h1>
+        <span>lulu.</span> lululab
+      </h1>
+    </Container>
+  );
 }
 
 const Container = styled.div`
-  border: 5px dotted green;
-  background-color: orange;
+  height: 50px;
+  background-color: ${colors.pink};
+  line-height: 50px;
+
+  > h1 {
+    color: ${colors.white};
+    font-family: 'Poppins', sans-serif;
+    > span {
+      color: ${colors.black};
+      font-family: 'Pacifico', cursive;
+    }
+  }
 `;

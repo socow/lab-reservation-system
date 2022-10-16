@@ -9,6 +9,13 @@ import { check } from 'prettier';
 export function RegisterInfo() {
   const [date, setDate] = useState('2022-10-17');
   const [time, setTime] = useState('4:30');
+  const [isCheckDuplicate, setIsCheckDuplicate] = useState(false);
+
+  const goToReserve = e => {
+    e.preventDefault();
+    if (isCheckDuplicate) {
+    }
+  };
 
   const {
     register,
@@ -37,12 +44,16 @@ export function RegisterInfo() {
             required
             {...register('client_name', { required: true })}
           />
+          {errors.client_name?.type === 'required' && (
+            <div className="required">예약자명을 입력하세요.</div>
+          )}
         </StyledInput>
         <StyledInput>
           <span>*</span>
           <p>연락처</p>
           <input
             type="number"
+            required
             {...register('client_phonenumber', { required: true })}
           />
           {errors.client_phonenumber?.type === 'required' && (
@@ -52,8 +63,9 @@ export function RegisterInfo() {
         <StyledInput>
           <span>*</span>
           <p>예약종류</p>
-          <div className="input">
+          <div>
             <input
+              className="radio_input"
               type="radio"
               name="reservationType"
               value="초진"
@@ -61,6 +73,7 @@ export function RegisterInfo() {
             />
             초진
             <input
+              className="radio_input"
               type="radio"
               name="reservationType"
               value="재진"
@@ -68,6 +81,7 @@ export function RegisterInfo() {
             />
             재진
             <input
+              className="radio_input"
               type="radio"
               name="reservationType"
               value="상담"
@@ -75,6 +89,7 @@ export function RegisterInfo() {
             />
             상담
             <input
+              className="radio_input"
               type="radio"
               name="reservationType"
               value="서류"
@@ -162,6 +177,12 @@ const StyledInput = styled.div`
   }
   input {
     margin-left: 20px;
+  }
+  .radio_input {
+    margin-left: 5px;
+  }
+  textarea {
+    margin-left: 15px;
   }
 `;
 

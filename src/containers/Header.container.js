@@ -22,6 +22,14 @@ export const Header = () => {
 const Container = styled.div`
   width: 100%;
   background-color: ${colors.black};
+
+  ${device.desktop} {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 `;
 
 const Inner = styled.div`
@@ -43,7 +51,9 @@ const Inner = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  background-color: ${colors.lightgray};
+  position: relative;
+  width: 100%;
+  background-color: ${colors.white};
   min-width: 375px;
 
   ${device.tablet} {
@@ -57,5 +67,7 @@ const ContentsWrapper = styled.div`
 `;
 
 const Contents = styled.div`
-  border: 3px solid green;
+  padding: 15px;
+  overflow-y: scroll;
+  overscroll-behavior-block: contain;
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Nav, WebNav } from '../components/_index.components';
 import { colors, device } from '../styles/Theme';
 
-export const Header = () => {
+export const Layout = () => {
   return (
     <Container>
       <Inner>
@@ -43,7 +43,7 @@ const Inner = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  background-color: ${colors.lightgray};
+  background-color: ${colors.white};
   min-width: 375px;
 
   ${device.tablet} {
@@ -57,5 +57,5 @@ const ContentsWrapper = styled.div`
 `;
 
 const Contents = styled.div`
-  border: 3px solid green;
+  padding: 15px;
 `;

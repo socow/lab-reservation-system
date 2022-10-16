@@ -12,6 +12,7 @@ export function Nav() {
 }
 
 const Container = styled.div`
+  padding: 0 15px;
   height: 50px;
   background-color: ${colors.pink};
   line-height: 50px;

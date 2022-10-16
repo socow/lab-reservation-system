@@ -5,3 +5,4 @@ export * from './Legend.component';
 export * from './Nav.component';
 export * from './Time.component';
 export * from './WebNav.component';
+export * from './RegisterInfo.component';

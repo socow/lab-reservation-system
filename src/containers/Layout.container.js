@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Nav, WebNav } from '../components/_index.components';
 import { colors, device } from '../styles/Theme';
 
-export const Header = () => {
+export const Layout = () => {
   return (
     <Container>
       <Inner>

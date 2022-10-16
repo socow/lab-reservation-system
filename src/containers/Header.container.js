@@ -56,6 +56,4 @@ const ContentsWrapper = styled.div`
   }
 `;
 
-const Contents = styled.div`
-  border: 3px solid green;
-`;
+const Contents = styled.div``;

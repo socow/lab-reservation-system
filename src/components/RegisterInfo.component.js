@@ -1,77 +1,125 @@
 import styled from 'styled-components';
+import React from 'react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { FiCalendar } from 'react-icons/fi';
+import { redirect } from 'react-router-dom';
+import { check } from 'prettier';
 
 export function RegisterInfo() {
-  const checkOnlyOne = checkThis => {
-    const checkboxes = document.getElementsByName('test');
-    for (let i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i] !== checkThis) {
-        checkboxes[i].checked = false;
-      }
-    }
-  };
+  const [date, setDate] = useState('2022-10-17');
+  const [time, setTime] = useState('4:30');
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = data => console.log(data);
 
   return (
-    <>
-      <p>예약자 정보</p>
-      <Container>
-        <Name>
-          <p>예약자명</p>
-          <div className="required">
-            <input type="text" />
-            <span>*필수</span>
-          </div>
-        </Name>
-        <Phone>
+    <Container>
+      <div>
+        <p>예약내용</p>
+        <div>
+          {date}
+          <br />
+          {time}
+        </div>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledInput>
+          <span>*</span>
+          <p>예약자</p>
+          <input
+            type="text"
+            required
+            {...register('client_name', { required: true })}
+          />
+        </StyledInput>
+        <StyledInput>
+          <span>*</span>
           <p>연락처</p>
-          <div className="required">
-            <input type="number" />
-            <span>*필수</span>
-          </div>
-        </Phone>
-        <Type>
+          <input
+            type="number"
+            {...register('client_phonenumber', { required: true })}
+          />
+          {errors.client_phonenumber?.type === 'required' && (
+            <div className="required">연락처를 입력하세요.</div>
+          )}
+        </StyledInput>
+        <StyledInput>
+          <span>*</span>
           <p>예약종류</p>
           <div className="input">
             <input
-              type="checkbox"
-              name="test"
-              value="1"
-              onChange={e => checkOnlyOne(e.target)}
+              type="radio"
+              name="reservationType"
+              value="초진"
+              {...register('reservationType', { required: true })}
             />
             초진
             <input
-              type="checkbox"
-              name="test"
-              value="2"
-              onChange={e => checkOnlyOne(e.target)}
+              type="radio"
+              name="reservationType"
+              value="재진"
+              {...register('reservationType', { required: true })}
             />
             재진
             <input
-              type="checkbox"
-              name="test"
-              value="3"
-              onChange={e => checkOnlyOne(e.target)}
+              type="radio"
+              name="reservationType"
+              value="상담"
+              {...register('reservationType', { required: true })}
             />
             상담
             <input
-              type="checkbox"
-              name="test"
-              value="4"
-              onChange={e => checkOnlyOne(e.target)}
+              type="radio"
+              name="reservationType"
+              value="서류"
+              {...register('reservationType', { required: true })}
             />
             서류
           </div>
-        </Type>
-        <Request>
+        </StyledInput>
+        <HiddenInput>
+          <span>*</span>
+          <p>예약날짜</p>
+          <input
+            type="text"
+            required
+            value={date}
+            name="reservationDate"
+            {...register('reservationDate', { required: true })}
+          />
+        </HiddenInput>
+        <HiddenInput>
+          <span>*</span>
+          <p>예약시간</p>
+          <input
+            type="text"
+            required
+            value={time}
+            name="reservationTime"
+            {...register('reservationTime', { required: true })}
+          />
+        </HiddenInput>
+        <StyledInput>
           <p>요청사항</p>
-          <textarea placeholder="이곳에 추가 요청사항을 적어주세요. " />
-        </Request>
+          <textarea
+            name="request"
+            placeholder="이곳에 추가 요청사항을 적어주세요. (최대 20자)"
+            maxLength={20}
+            {...register('request', { maxLength: 20 })}
+          />
+        </StyledInput>
         <ConfirmButton type="submit">
           <FiCalendar />
           <p>예약 확정</p>
         </ConfirmButton>
-      </Container>
-    </>
+      </form>
+    </Container>
   );
 }
 
@@ -82,13 +130,21 @@ const Container = styled.section`
   align-items: center;
   width: 100%;
   height: 100%;
-  border: 1px dashed white;
-  background-color: green;
-  p {
+  form {
+    width: 95%;
+  }
+  span {
+    color: red;
+    margin-right: 3px;
+  }
+  .required {
+    margin-left: 10px;
+    font-size: 13px;
+    color: red;
   }
 `;
 
-const Name = styled.div`
+const StyledInput = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -100,9 +156,6 @@ const Name = styled.div`
       font-size: 15px;
       color: red;
     }
-  }
-  .required {
-    position: relative;
   }
   p {
     font-size: 15px;
@@ -112,58 +165,14 @@ const Name = styled.div`
   }
 `;
 
-const Phone = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  div {
-    display: flex;
-    span {
-      position: absolute;
-      right: 8px;
-      font-size: 15px;
-      color: red;
-    }
-  }
-  .required {
-    position: relative;
-  }
-  p {
-    font-size: 15px;
-  }
-  input {
-    margin-left: 32px;
-  }
-`;
-
-const Type = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  p {
-    font-size: 15px;
-  }
-  .input {
-    margin-left: 17px;
-    font-size: 15px;
-  }
-`;
-
-const Request = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  font-size: 15px;
-  textarea {
-    margin-left: 15px;
-  }
+const HiddenInput = styled.div`
+  display: none;
 `;
 
 const ConfirmButton = styled.button`
-  width: 80%;
+  width: 250px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   font-weight: bold;
   margin-top: 10px;
   padding: 10px 60px;

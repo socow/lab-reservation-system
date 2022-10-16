@@ -4,12 +4,15 @@ import { RegisterInfo } from '../components/RegisterInfo.component';
 export function Register() {
   return (
     <Container>
-      <h1>Register.page</h1>
+      <h1>예약자 정보</h1>
       <RegisterInfo />
     </Container>
   );
 }
 
 const Container = styled.div`
-  border: 3px solid blue;
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
 `;

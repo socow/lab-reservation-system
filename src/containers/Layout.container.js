@@ -68,6 +68,8 @@ const ContentsWrapper = styled.div`
 
 const Contents = styled.div`
   padding: 15px;
+  height: 100%;
+  min-height: 100vh;
   overflow-y: scroll;
   overscroll-behavior-block: contain;
 `;

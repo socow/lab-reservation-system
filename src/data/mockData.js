@@ -1,3 +1,9 @@
+export const DIRECTORY_DATA = {
+  '/': '예약',
+  '/reserve': '등록',
+  '/find-reservation': '조회',
+};
+
 const TYPES = { reservationTypes: ['초진', '재진', '상담', '서류'] };
 
 const STATUS = {
@@ -96,5 +102,3 @@ export const RESERVATIONDATA = [
     reservationStatus: '초진',
   },
 ];
-
-console.log(RESERVATIONDATA[0].reservationStatus);

@@ -1,9 +1,10 @@
 export const colors = {
   white: '#FFFFFF',
   black: '#000000',
-  pink: '#DA055C',
+  brand: '#DA055C',
   gray: '#ABABAB',
   lightgray: '#F3F3F3',
+  darkgray: '#909090 ',
 };
 
 export const deviceSizes = {

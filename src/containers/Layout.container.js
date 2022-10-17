@@ -22,6 +22,14 @@ export const Layout = () => {
 const Container = styled.div`
   width: 100%;
   background-color: ${colors.black};
+
+  ${device.desktop} {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 `;
 
 const Inner = styled.div`
@@ -43,6 +51,8 @@ const Inner = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
+  position: relative;
+  width: 100%;
   background-color: ${colors.white};
   min-width: 375px;
 
@@ -58,4 +68,8 @@ const ContentsWrapper = styled.div`
 
 const Contents = styled.div`
   padding: 15px;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overscroll-behavior-block: contain;
 `;

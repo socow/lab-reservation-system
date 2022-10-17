@@ -36,6 +36,11 @@ const hoverEffect = {
   secondary: {
     opacity: '0.8',
   },
+  nav: {
+    'background-color': colors.brand,
+    border: `2px solid ${colors.white}`,
+    'border-radius': '10px',
+  },
   other: {
     'background-color': colors.brand,
     border: `3px solid ${colors.brand}`,
@@ -55,9 +60,15 @@ const modeStyle = {
     'border-radius': '10px',
     color: colors.white,
   },
+  nav: {
+    width: '100%',
+    height: '40px',
+    'background-color': colors.brand,
+    border: `2px solid ${colors.brand}`,
+
+    color: colors.white,
+  },
   other: {
-    width: '200px',
-    height: '50px',
     'background-color': colors.gray,
     border: `3px solid ${colors.white}`,
     'border-radius': '50px',
@@ -75,7 +86,7 @@ const componentDesign = css`
   justify-content: center;
   cursor: pointer;
 
-  width: ${fullwidth => (fullwidth ? '100%' : '50px')};
+  width: ${fullwidth => (fullwidth ? '200px' : '30px')};
   ${({ styledmode }) => modeStyle[styledmode]};
 
   &:disabled {

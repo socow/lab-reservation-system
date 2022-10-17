@@ -9,10 +9,10 @@ export function WebNav() {
         <span>룰루랩</span> 간편한 병원 예약 시스템
       </h2>
       <ButtonWrapper>
-        <Button mode="link" to="/" styledmode="other" fullwidth>
+        <Button mode="link" to="#" styledmode="other" fullwidth>
           Google Play 다운
         </Button>
-        <Button mode="link" to="/" styledmode="other" fullwidth>
+        <Button mode="link" to="#" styledmode="other" fullwidth>
           App Store 다운
         </Button>
       </ButtonWrapper>

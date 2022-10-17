@@ -2,13 +2,11 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import setHours from 'date-fns/setHours';
-import setMinutes from 'date-fns/setMinutes';
 import { BsClock } from 'react-icons/bs';
-import { RESERVATIONDATA } from '../data/mockData';
+// import { RESERVATIONDATA } from '../data/mockData';
 import { Button, Legend, Input } from '../components/_index.components';
 import { DatePickerContainer } from '../containers/_index.containers';
-import { getRoundedDate } from '../utils/formatTime';
+// import { getRoundedDate } from '../utils/formatTime';
 
 export function Time({ setSelectedTime }) {
   const [startTime, setStartTime] = useState(new Date());

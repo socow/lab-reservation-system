@@ -88,8 +88,8 @@ const ReservationCheck = styled.button`
   width: 100%;
   font-size: 23px;
   color: ${colors.white};
-  background-color: ${colors.pink};
-  border: 1.5px solid ${colors.pink};
+  background-color: ${colors.brand};
+  border: 1.5px solid ${colors.brand};
 
   &:disabled {
     opacity: 0.5;
@@ -110,5 +110,5 @@ const UserInformationWrappar = styled.div`
 `;
 const UserInformation = styled.div`
   padding: 7px;
-  border-bottom: 1.5px solid ${colors.pink};
+  border-bottom: 1.5px solid ${colors.brand};
 `;

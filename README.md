@@ -1,6 +1,6 @@
 ### ✅ lab-reservation-system
 
-# 미리보기
+DEMO : [DEMO](https://ephemeral-raindrop-02e734.netlify.app)
 
 # 1. 프로젝트 개요
 

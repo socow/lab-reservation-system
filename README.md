@@ -20,42 +20,11 @@ DEMO : [DEMO](https://ephemeral-raindrop-02e734.netlify.app)
 
   # 3. 프로젝트 설치 및 실행 방법
 
-  1. Node.JS를 다운받아 설치해주세요.
 
 ```
-https://nodejs.org/
+$ npm install
+$ npm start
 ```
-
-<br/>
-
-2. 리포지토리를 클론해주세요.<br/>
-
-```
-git clone https://github.com/ebchoi/lab-reservation-system.git
-```
-
-<br/>
-
-3.dependencies를 설치해주세요.
-
-```
-npm install
-```
-
-<br/>
-<br/>
-
-## 실행방법
-
-1. 다음 명령어를 이용해 실행시켜주세요.
-
-```
-npm run start
-```
-
-<br/>
-
-2. 브라우저에서 http://localhost:3000/로 접속하거나, [배포주소]로 접속해주시면 됩니다.
 
    <br/>
    <br/>
@@ -108,19 +77,8 @@ const filterReservationData = RESERVATIONDATA.filter(
 <br/>
 <br/>
 
-# 팀원소개
-
-### ✅ 프론트엔드 최은비
-
-- 깃허브
-- 블로그
-
-### ✅ 프론트엔드 김슬기
-
-- 깃허브 https://github.com/sseul22
-- 블로그 https://velog.io/@sseul22
 
 ### ✅ 프론트엔드 소재현
 
-- 깃허브
-- 블로그
+- 깃허브 https://github.com/socow
+- 블로그 https://velog.io/@so960225
